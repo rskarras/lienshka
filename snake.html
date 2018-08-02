@@ -25,12 +25,12 @@ function game() {
 		positionX = 10;
 		positionY = 10;
 	}
-	if(positionX < 0) {
+	if(positionY < 0) {
 		tail = 5;
 		positionX = 10;
 		positionY = 10;
 	}
-	if(positionX > tileCount-1) {
+	if(positionY > tileCount-1) {
 		tail = 5;
 		positionX = 10;
 		positionY = 10;
@@ -48,6 +48,8 @@ function game() {
         ctx.fillRect(trail[i].x*gridSize,trail[i].y*gridSize,gridSize-2,gridSize-2);
         if(trail[i].x==positionX && trail[i].y==positionY) {
             tail = 5;
+			positionX = 10;
+			positionY = 10;
         }
     }
  	trail.push({x: positionX, y: positionY});
@@ -84,12 +86,6 @@ function keyPush(e) {
 				velocityX = 0; velocityY = 1;
 			}
 			break;
-		case 190:
-		
-			setInterval(game, 1000/100);
-	
-		case 188:
-			setInterval(game, 1000/100);
 	}
 }
 </script>
